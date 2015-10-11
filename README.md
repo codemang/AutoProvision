@@ -16,3 +16,9 @@ Tasks
 5) Sync data from Cloud services, such as iCloud/Dropbox 
 
 6) Clone all personal Github repos in a SideProjects directory
+
+
+Wishful Thinking
+----------------
+
+A nice feature would be to export all the settings on a given computer and use those as the inputs to brew, brew cask, dotfiles, etc.
