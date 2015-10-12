@@ -4,14 +4,15 @@
       "github_ssh_key_email": "nateboop@gmail.com",
       "github_username": "codemang",
       "ssh_key_postfix": "test"
-    } 
+    }
   ],
   "binaries": [
     "ruby",
     "python",
     "caskroom/cask/brew-cask",
     "wget",
-    "macvim"
+    "macvim",
+    "cmake"
   ],
   "apps": [
     "google-chrome",
@@ -23,9 +24,13 @@
     "torbrowser",
     "firefox",
     "utorrent",
-    "alfred"
-  ]
-} 
-  
-
-
+    ["alfred", 
+      [
+      "brew cask alfred link"
+      ]
+    ],
+    "flux"
+  ],
+  "gems": [],
+  "pips": []
+}
