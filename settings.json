@@ -1,0 +1,31 @@
+{
+  "github_accounts": [
+    {
+      "github_ssh_key_email": "nateboop@gmail.com",
+      "github_username": "codemang",
+      "ssh_key_postfix": "test"
+    } 
+  ],
+  "binaries": [
+    "ruby",
+    "python",
+    "caskroom/cask/brew-cask",
+    "wget",
+    "macvim"
+  ],
+  "apps": [
+    "google-chrome",
+    "iterm2",
+    "github",
+    "vagrant",
+    "virtualbox",
+    "sublime-text3",
+    "torbrowser",
+    "firefox",
+    "utorrent",
+    "alfred"
+  ]
+} 
+  
+
+
