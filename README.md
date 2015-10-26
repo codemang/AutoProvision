@@ -31,7 +31,7 @@ Once the rake task completes, there is still some work to be done to finish cust
 Important Details
 -----------------
 ####Github Key Generation
-There is a sections in the `settings.rb` file pertaining to ssh key generation for Github. You must include your github username, email associated with the ssh key, and the extension of the ssh key. For instance if you want your key to be named `id_rsa_mykey`, then you must use `mykey` as the extension. 
+There is a section in the `settings.rb` file pertaining to ssh key generation for Github. You must include your github username, email associated with the ssh key, and the extension of the ssh key. For instance if you want your key to be named `id_rsa_mykey`, then you must use `mykey` as the extension. 
 
 This part of the process requires you to interact with the terminal to create a password for you ssh key. Once the key is generated, the rake task will attempt to send the new public key to Github. This will fail if your github account requires 2auth. The rake task will detect this and prompt you to enter your 6 digit auth token. You can also decide to skip this step and continue with the rake task.
 

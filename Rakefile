@@ -1,11 +1,25 @@
 #!/usr/bin/env ruby
 
-require_relative 'settings'
+require_relative "settings"
+require "sshkey"
+require "github_api"
 
 namespace :configure do
   def generate_ssh_key(email, key_name)
     ssh_path = File.join(File.expand_path("~/.ssh"), "id_rsa_#{key_name}")
     system "./ssh-gen.sh #{email} #{ssh_path}"
+    
+    # puts "Enter a passphrase: "
+    # password1 = gets
+    # puts "Re-enter your password: "
+    # password2 = gets
+    #
+    # if 
+    # new_key = SSHKey.generate(
+    #   type:       "RSA",
+    #   bits:       1024,
+    #   comment:    "#{email}",
+    # )
   end
 
   task :generate_github_ssh_keys do
@@ -48,6 +62,16 @@ namespace :configure do
 
   task :install_xcode_command_line do
     system "xcode-select --install"
+  end
+
+  task :install_home_brew do
+    system "ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\""
+    system "brew update"
+
+    good = `brew --version`
+    if !good =~ /\d\.\d\.\d/
+      fail "\e[0;31mThere was an error when trying to install/update homebrew. Possible causes are a broken ruby installation.\e[0m"
+    end
   end
 
   task :what do
