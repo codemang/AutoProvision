@@ -4,7 +4,7 @@ def settings
     {
       github_ssh_key_email: "nateboop@gmail.com",
       github_username: "codemang",
-      ssh_key_postfix: "test"
+      ssh_key_postfix: "codemang"
     }
   ],
   binaries: [
@@ -27,6 +27,7 @@ def settings
     {name: "firefox"},
     {name: "one-password"},
     {name: "utorrent"},
+    {name: "vlc"},
     {name: "dropbox", 
      commands: ["mkdir ~/Dropbox"]
     },

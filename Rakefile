@@ -55,7 +55,6 @@ namespace :configure do
   end
 
   task :install_dotfiles do
-    # TODO: Make sure what type to use, https or ssh? Should I specify the ssh github account?
     system "git clone https://github.com/codemang/Dotfiles.git ~/Dotfiles"
     Dir.chdir File.expand_path "~/Dotfiles"
     system "rake"
