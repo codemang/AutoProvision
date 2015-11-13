@@ -14,7 +14,10 @@ def settings
     {name: "wget"},
     {name: "macvim"},
     {name: "cmake"},
-    {name: "mackup"}
+    {name: "ctags"},
+    {name: "mackup"},
+    {name: "reattach-to-user-namespace"}
+    {name: "terminal-notifier"}
   ],
   apps: [
     {name: "google-chrome"},

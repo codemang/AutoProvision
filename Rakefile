@@ -5,6 +5,14 @@ require "sshkey"
 require "github_api"
 
 namespace :configure do
+  def upload_to_github(username, password, 2fa_token, key_title, key)
+    github_handle = Github.new do |config|
+      config.basic_auth = "#{username}:#{password}"
+      config.connection_options = {headers: {"X-GitHub-OTP" => "#{2fa_token}"}}
+    end
+    github_handle.users.keys.create "title": "#{key_title}", "key":"#{key}"
+  end
+
   def generate_ssh_key(email, key_name)
     ssh_path = File.join(File.expand_path("~/.ssh"), "id_rsa_#{key_name}")
     system "./ssh-gen.sh #{email} #{ssh_path}"
@@ -24,7 +32,11 @@ namespace :configure do
 
   task :generate_github_ssh_keys do
     for account in settings["github_accounts"]
-      generate_ssh_key(account["github_ssh_key_email"], account["ssh_key_postfix"])
+      email = account["github_ssh_key_email"]
+      generate_ssh_key(email, account["ssh_key_postfix"])
+      puts "Github key name? (i.e Bobs-Work-Computer) (type 'n' to skip): "
+      puts "2Auth needed, what's your 6 digit token? (type 'n' to skip): "
+      puts "Your SSH key, #{title}, was succesfully uploaded to Github!"
     end
   end
 
