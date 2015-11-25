@@ -17,7 +17,8 @@ def settings
     {name: "ctags"},
     {name: "mackup"},
     {name: "reattach-to-user-namespace"}
-    {name: "terminal-notifier"}
+    {name: "terminal-notifier"},
+    {name: "htop"}
   ],
   apps: [
     {name: "google-chrome"},
